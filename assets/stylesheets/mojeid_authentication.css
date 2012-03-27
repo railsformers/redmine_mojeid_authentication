@@ -1,0 +1,13 @@
+div#mojeid_form {
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  margin: 10px auto;
+}
+div#mojeid_form input[type=submit] {
+  display: inline-block;
+  background: transparent url('../images/black/155x24.png') no-repeat;
+  height: 24px;
+  width: 155px;
+  border: 0;
+}
