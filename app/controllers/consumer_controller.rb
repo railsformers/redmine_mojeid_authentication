@@ -23,7 +23,8 @@ class ConsumerController < AccountController
 
     mojeid.add_attributes([
       [MojeID::AVAILABLE_ATTRIBUTES[1], nil, true],
-      [MojeID::AVAILABLE_ATTRIBUTES[2], nil, true]
+      [MojeID::AVAILABLE_ATTRIBUTES[2], nil, true],
+      ["http://specs.nic.cz/attr/contact/status", nil, true]
     ])
 
     redirect_to mojeid.redirect_url
@@ -39,16 +40,17 @@ class ConsumerController < AccountController
         if User.current.valid?
           User.current.firstname = mojeid.data[MojeID::AVAILABLE_ATTRIBUTES[1]].first if mojeid.data[MojeID::AVAILABLE_ATTRIBUTES[1]].any?
           User.current.lastname = mojeid.data[MojeID::AVAILABLE_ATTRIBUTES[2]].first if mojeid.data[MojeID::AVAILABLE_ATTRIBUTES[2]].any?
+          User.current.mojeid_status = mojeid.data['http://specs.nic.cz/attr/contact/status'].first if mojeid.data['http://specs.nic.cz/attr/contact/status'].any?
           User.current.save
         else
           User.current.mojeid_identity_url = actual_mojeid
           flash[:error] = t("mojeid_already_used")
         end
-        redirect_to "/my/account"
-        return
+        redirect_to "/my/account" and return
       elsif user = User.find_by_mojeid_identity_url(@response.endpoint.claimed_id.split('#')[0])
         user.firstname = mojeid.data[MojeID::AVAILABLE_ATTRIBUTES[1]].first if mojeid.data[MojeID::AVAILABLE_ATTRIBUTES[1]].any?
         user.lastname = mojeid.data[MojeID::AVAILABLE_ATTRIBUTES[2]].first if mojeid.data[MojeID::AVAILABLE_ATTRIBUTES[2]].any?
+        user.mojeid_status = mojeid.data['http://specs.nic.cz/attr/contact/status'].first if mojeid.data['http://specs.nic.cz/attr/contact/status'].any?
         user.save
         self.logged_user = user
         call_hook(:controller_account_success_authentication_after, { :user => user })
@@ -59,12 +61,13 @@ class ConsumerController < AccountController
     else
       flash[:error] = t("mojeid_error")
     end
+    @data = mojeid.data
     redirect_to signin_path
   end
 
   private
 
   def consumer
-    @consumer ||= MojeID.get_consumer(session, MojeID.get_openid_store("tmp"))
+    @consumer ||= MojeID.get_consumer(session, MojeID.get_openid_store("/tmp/mojeid-asTg34"))
   end
 end

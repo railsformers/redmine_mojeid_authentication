@@ -1,5 +1,10 @@
 <p>
-  <%= form.text_field :mojeid_identity_url, :disabled => true %>
+  <label><%= t("field_mojeid_identity_url") %></label>
+  <span><%= @user.mojeid_identity_url %></span>
   <br />
   <%= link_to t("associate_with_mojeid"), consumer_path(:assoc_request => true), :method => :post %>
+</p>
+<p>
+  <label><%= t("field_mojeid_status") %></label>
+  <span><%= @user.mojeid_status %></span>
 </p>

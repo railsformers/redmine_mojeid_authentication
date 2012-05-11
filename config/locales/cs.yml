@@ -8,3 +8,4 @@ cs:
   associate_with_mojeid: "Provázat s MojeID"
 
   field_mojeid_identity_url: "MojeID identita"
+  field_mojeid_status: "Moje ID úroveň ověření"

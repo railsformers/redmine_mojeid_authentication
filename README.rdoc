@@ -1,3 +1,5 @@
 = mojeid_authentication
 
-Description goes here
+Plugin potrebuje ke sve funkci gem mojeid. Pokud pouzivate bundler, pridejte jej do Gemfile:
+
+gem "mojeid", :git => "https://github.com/railsformers/mojeid.git"
