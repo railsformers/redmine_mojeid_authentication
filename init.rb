@@ -1,13 +1,13 @@
 require 'redmine'
 require 'mojeid'
 
+# patches
+require_dependency 'patches'
+
+# hooks
 require_dependency 'hooks'
 
-require 'dispatcher'
-require 'patches'
-Dispatcher.to_prepare do
-  User.send(:include, UserPatch) unless User.included_modules.include? UserPatch
-end
+RAILS_DEFAULT_LOGGER.info 'Starting MojeIdAuthentication plugin for RedMine'
 
 Redmine::Plugin.register :redmine_mojeid_authentication do
   name 'Redmine Mojeid Authentication plugin'
