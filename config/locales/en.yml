@@ -1,0 +1,14 @@
+en:
+  mojeid_unassociated: "You signed in with mojeID identity that is not associated with any user account."
+  mojeid_error: "When you try to log in using mojeID error occurred. Please try again later."
+  mojeid_not_logged: "The requested operation can not be done because you are not logged in or session expired."
+  mojeid_already_used: "This mojeID identity is already connected with another user account and interconnection with multiple accounts is not supported."
+
+  associate_with_mojeid: "Interconnect with mojeID"
+  unlink_with_mojeid: "Unlink with mojeID"
+
+  field_mojeid_identity_url: "MojeID identity"
+  field_mojeid_status: "MojeID authentication level"
+
+  why_mojeid: "Why mojeID?"
+  new_mojeid_registration: "Register new mojeID"

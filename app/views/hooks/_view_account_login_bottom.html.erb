@@ -1,7 +1,9 @@
 <div id="mojeid_form">
   <% form_tag consumer_path, :method => :post do %>
     <%= submit_tag '' %>
-    <%= link_to('Proč mojeID?', 'http://www.mojeid.cz/page/805/vyhody-mojeid/', :target => :blank) %> |
-    <%= link_to('Nový účet mojeID', 'http://www.mojeid.cz/page/795/zalozeni-uctu/', :target => :blank) %>
   <% end %>
+  <div>
+    <%= link_to t('why_mojeid'), 'http://www.mojeid.cz/page/805/vyhody-mojeid/', :target => :blank %> |
+    <%= link_to t('new_mojeid_registration'), 'http://www.mojeid.cz/page/795/zalozeni-uctu/', :target => :blank %>
+  </div>
 </div>

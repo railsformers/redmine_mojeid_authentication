@@ -1,11 +1,14 @@
-# Czech strings go here for Rails i18n
 cs:
-  mojeid_unassociated: "Přihlásil/a jste se s MojeID identitou, která není spojená s žádným uživatelem."
-  mojeid_error: "Při pokusu o přihlášení přes MojeID došlo k chybě. Zkuste to znovu později."
+  mojeid_unassociated: "Přihlásil/a jste se s mojeID identitou, která není spojená s žádným uživatelem."
+  mojeid_error: "Při pokusu o přihlášení přes mojeID došlo k chybě. Zkuste to znovu později."
   mojeid_not_logged: "Požadovanou operaci není možné provést, neboť nejste přihlášen/a nebo platnost přihlášení vypřšela."
-  mojeid_already_used: "Tato MojeID identita je již propojena s jiným uživatelským účtem a propojení s více účty není podporováno."
+  mojeid_already_used: "Tato mojeID identita je již propojena s jiným uživatelským účtem a propojení s více účty není podporováno."
 
-  associate_with_mojeid: "Provázat s MojeID"
+  associate_with_mojeid: "Provázat s mojeID"
+  unlink_with_mojeid: "Rozvázat mojeID"
 
   field_mojeid_identity_url: "MojeID identita"
-  field_mojeid_status: "Moje ID úroveň ověření"
+  field_mojeid_status: "MojeID úroveň ověření"
+
+  why_mojeid: "Proč mojeID?"
+  new_mojeid_registration: "Nový účet mojeID"

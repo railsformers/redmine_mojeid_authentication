@@ -2,7 +2,11 @@
   <label><%= t("field_mojeid_identity_url") %></label>
   <span><%= @user.mojeid_identity_url %></span>
   <br />
-  <%= link_to t("associate_with_mojeid"), consumer_path(:assoc_request => true), :method => :post %>
+  <% if @user.mojeid_identity_url.blank? %>
+    <%= link_to t("associate_with_mojeid"), consumer_path(:assoc_request => true), :method => :post %>
+  <% else %>
+    <%= link_to t("unlink_with_mojeid"), consumer_unlink_path, :method => :post %>
+  <% end %>
 </p>
 <p>
   <label><%= t("field_mojeid_status") %></label>

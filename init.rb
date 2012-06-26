@@ -1,6 +1,10 @@
 require 'redmine'
 require 'mojeid'
 
+Rails.configuration.to_prepare do
+  gem 'mojeid'
+end
+
 # patches
 require_dependency 'patches'
 
@@ -17,4 +21,6 @@ Redmine::Plugin.register :redmine_mojeid_authentication do
   url 'https://github.com/railsformers/redmine_mojeid_authentication'
   author_url 'https://github.com/richardriman'
   requires_redmine :version_or_higher => '1.2.0'
+
+
 end
