@@ -17,7 +17,7 @@ Redmine::Plugin.register :redmine_mojeid_authentication do
   name 'Redmine Mojeid Authentication plugin'
   author 'Richard Riman of Railsformers s.r.o.'
   description 'This plugin is an authentication extension for MojeID service (http://www.mojeid.cz/).'
-  version '0.0.2'
+  version '0.2.0'
   url 'https://github.com/railsformers/redmine_mojeid_authentication'
   author_url 'https://github.com/richardriman'
   requires_redmine :version_or_higher => '1.2.0'
