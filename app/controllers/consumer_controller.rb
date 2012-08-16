@@ -18,7 +18,7 @@ class ConsumerController < AccountController
     end
     mojeid = MojeID.new(:test => true)
     mojeid.return_to = consumer_completed_url
-    mojeid.realm = root_url
+    mojeid.realm = consumer_url
     begin
       mojeid.fetch_request(consumer)
     rescue MojeID::DiscoveryFailure => f
